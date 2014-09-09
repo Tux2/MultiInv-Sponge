@@ -1,0 +1,1 @@
+This is a work in progress port from the Bukkit version of MultiInv. As such there is still a lot of bukkit code in here. As API methods become available I will be implementing them so that MultiInv should be fully functional when the first public release of Sponge is out.
