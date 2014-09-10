@@ -97,8 +97,7 @@ public class MultiInv {
         playerListener = new MIPlayerListener(this);
         
         // Register required events
-        PluginManager pm = getServer().getPluginManager();
-        pm.registerEvents(playerListener, this);
+        currentgame.getEventManager().register(playerListener);
         String[] cbversionstring = getServer().getVersion().split(":");
         String[] versionstring = cbversionstring[1].split("\\.");
         try {

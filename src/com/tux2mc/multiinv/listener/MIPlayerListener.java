@@ -9,12 +9,16 @@ import com.tux2mc.multiinv.workarounds.SetXP;
 
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.spongepowered.api.entity.Player;
+import org.spongepowered.api.event.Order;
+import org.spongepowered.api.event.SpongeEventHandler;
+import org.spongepowered.api.event.world.WorldLoadEvent;
 import org.spongepowered.api.world.World;
 
 /**
  * Created by IntelliJ IDEA. User: Pluckerpluck Date: 18/12/11 Time: 23:32 To change this template use File | Settings | File Templates.
  */
-public class MIPlayerListener implements Listener {
+public class MIPlayerListener {
 
 	static ConcurrentHashMap<String,MIPlayer> players = new ConcurrentHashMap<String,MIPlayer>();
 	ConcurrentHashMap<String,Boolean> playerchangeworlds = new ConcurrentHashMap<String,Boolean>();
@@ -40,13 +44,13 @@ public class MIPlayerListener implements Listener {
 		playerremoval.remove(player);
 	}
 	
-	@EventHandler(priority=EventPriority.MONITOR)
+	@SpongeEventHandler(order=Order.POST)
 	public void onWorldLoaded(WorldLoadEvent event) {
 		World world = event.getWorld();
 		plugin.addWorld(world);
 	}
 
-	@EventHandler(priority = EventPriority.MONITOR)
+	@SpongeEventHandler(order=Order.POST)
 	public void onPlayerLogin(PlayerLoginEvent event) {
 		Player player = event.getPlayer();
 
@@ -76,7 +80,7 @@ public class MIPlayerListener implements Listener {
 		}
 	}
 
-	@EventHandler(priority = EventPriority.MONITOR)
+	@SpongeEventHandler(order=Order.POST)
 	public void onPlayerLogout(PlayerQuitEvent event) {
 		Player player = event.getPlayer();
 
@@ -105,7 +109,7 @@ public class MIPlayerListener implements Listener {
         }
 	}
 
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@SpongeEventHandler(order=Order.LAST)
 	public void onPlayerChangedWorld(PlayerChangedWorldEvent event) {
 		// No need to run this twice!
 		if(MIYamlFiles.compatibilitymode) {
@@ -147,7 +151,7 @@ public class MIPlayerListener implements Listener {
 		}
 	}
 
-	@EventHandler(priority = EventPriority.MONITOR)
+	@SpongeEventHandler(order=Order.POST)
 	public void onPlayerTeleport(PlayerTeleportEvent event) {
 		if(event.isCancelled()) {
 			return;
@@ -203,7 +207,7 @@ public class MIPlayerListener implements Listener {
 		}
 	}
 
-	@EventHandler(priority = EventPriority.MONITOR)
+	@SpongeEventHandler(order=Order.POST)
 	public void onPlayerDeath(PlayerRespawnEvent event) {
 		if(!MIYamlFiles.compatibilitymode) {
 			return;
@@ -229,7 +233,7 @@ public class MIPlayerListener implements Listener {
 		}
 	}
 
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@SpongeEventHandler(order=Order.LAST)
 	public void onPlayerGameModeChange(PlayerGameModeChangeEvent event) {
 		if(!event.isCancelled() && MIYamlFiles.separategamemodeinventories) {
 			Player player = event.getPlayer();
