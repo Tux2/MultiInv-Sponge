@@ -1,23 +1,5 @@
 package com.tux2mc.multiinv.listener;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
-import org.bukkit.Location;
-import org.bukkit.World;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerChangedWorldEvent;
-import org.bukkit.event.player.PlayerGameModeChangeEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
-import org.bukkit.event.player.PlayerRespawnEvent;
-import org.bukkit.event.player.PlayerTeleportEvent;
-import org.bukkit.event.world.WorldLoadEvent;
-import org.bukkit.scheduler.BukkitTask;
-
 import com.tux2mc.multiinv.MIYamlFiles;
 import com.tux2mc.multiinv.MultiInv;
 import com.tux2mc.multiinv.PlayerLogoutRemover;
@@ -26,6 +8,8 @@ import com.tux2mc.multiinv.player.MIPlayer;
 import com.tux2mc.multiinv.workarounds.SetXP;
 
 import java.util.concurrent.ConcurrentHashMap;
+
+import org.spongepowered.api.world.World;
 
 /**
  * Created by IntelliJ IDEA. User: Pluckerpluck Date: 18/12/11 Time: 23:32 To change this template use File | Settings | File Templates.

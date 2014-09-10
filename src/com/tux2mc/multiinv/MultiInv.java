@@ -3,14 +3,18 @@ package com.tux2mc.multiinv;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 //import com.tux2mc.debugreport.DebugReport;
 
+import org.spongepowered.api.Game;
+import org.spongepowered.api.entity.Player;
 import org.spongepowered.api.event.SpongeEventHandler;
-import org.spongepowered.api.event.state.SpongeServerStartedEvent;
-import org.spongepowered.api.event.state.SpongeServerStoppingEvent;
+import org.spongepowered.api.event.state.ServerStartedEvent;
+import org.spongepowered.api.event.state.ServerStoppingEvent;
 import org.spongepowered.api.plugin.Plugin;
+import org.spongepowered.api.world.World;
 
 import com.tux2mc.multiinv.command.MICommand;
 import com.tux2mc.multiinv.inventory.MIInventory;
@@ -25,6 +29,8 @@ public class MultiInv {
     public int xpversion = 0;
     private MultiInvAPI api;
     
+    private static Game currentgame = null;
+    
     //public DebugReport dreport = null;
     
     private ArrayList<String> grouplist = new ArrayList<String>();
@@ -33,12 +39,13 @@ public class MultiInv {
     MIPlayerListener playerListener;
     
     @SpongeEventHandler
-    public void onDisable(SpongeServerStoppingEvent event) {
+    public void onDisable(ServerStoppingEvent event) {
         MIYamlFiles.saveLogoutWorlds();
 
         //If we save on quit we also want to save on disable!
 		if(MIYamlFiles.saveonquit) {
-			for(Player player : getServer().getOnlinePlayers()) {
+			Collection<Player> players = event.getGame().getOnlinePlayers();
+			for(Player player : players) {
 				String currentworld = MIPlayerListener.getGroup(player.getLocation().getWorld());
 	        	if(!player.hasPermission("multiinv.enderchestexempt")) {
 	                // Load the enderchest inventory for this world from file.
@@ -54,7 +61,8 @@ public class MultiInv {
     }
     
     @SpongeEventHandler
-    public void onEnable(SpongeServerStartedEvent event) {
+    public void onEnable(ServerStartedEvent event) {
+    	currentgame = event.getGame();
         // Initialize Logger
         log = new MILogger();
         
@@ -250,7 +258,7 @@ public class MultiInv {
     
     public void scanWorlds() {
     	grouplist.clear();
-    	List<World> worlds = Bukkit.getServer().getWorlds();
+    	Collection<World> worlds = currentgame.getWorlds();
     	for(World world : worlds) {
     		String group = playerListener.getGroup(world);
     		if(!grouplist.contains(group)) {
@@ -270,4 +278,7 @@ public class MultiInv {
     	return grouplist;
     }
     
+    public static Game getCurrentGame() {
+    	return currentgame;
+    }
 }
