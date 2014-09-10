@@ -1,6 +1,6 @@
 package com.tux2mc.multiinv.workarounds;
 
-import org.bukkit.entity.Player;
+import org.spongepowered.api.entity.Player;
 
 import com.tux2mc.multiinv.listener.MIPlayerListener;
 

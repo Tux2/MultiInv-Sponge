@@ -1,7 +1,5 @@
 package com.tux2mc.multiinv.mysql;
 
-import org.bukkit.OfflinePlayer;
-
 import com.tux2mc.multiinv.books.MIBook;
 
 public class MISqlStatement {

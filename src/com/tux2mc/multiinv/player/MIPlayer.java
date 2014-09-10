@@ -3,11 +3,7 @@ package com.tux2mc.multiinv.player;
 import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.PlayerInventory;
+import org.spongepowered.api.entity.Player;
 
 import com.tux2mc.multiinv.MIYamlFiles;
 import com.tux2mc.multiinv.MultiInv;

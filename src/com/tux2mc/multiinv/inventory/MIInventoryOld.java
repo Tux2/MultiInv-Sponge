@@ -1,8 +1,6 @@
 package com.tux2mc.multiinv.inventory;
 
-import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
+import org.spongepowered.api.entity.Player;
 
 /**
  * User: Pluckerpluck Date: 23/12/11

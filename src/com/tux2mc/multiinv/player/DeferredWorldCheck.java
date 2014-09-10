@@ -1,6 +1,6 @@
 package com.tux2mc.multiinv.player;
 
-import org.bukkit.entity.Player;
+import org.spongepowered.api.entity.Player;
 
 import com.tux2mc.multiinv.MIYamlFiles;
 import com.tux2mc.multiinv.MultiInv;

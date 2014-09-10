@@ -2,9 +2,6 @@ package com.tux2mc.multiinv.api;
 
 import java.util.UUID;
 
-import org.bukkit.GameMode;
-import org.bukkit.OfflinePlayer;
-
 import com.tux2mc.multiinv.inventory.MIEnderchestInventory;
 import com.tux2mc.multiinv.inventory.MIInventory;
 

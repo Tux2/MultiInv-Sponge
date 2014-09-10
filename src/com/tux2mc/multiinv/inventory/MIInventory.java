@@ -1,14 +1,10 @@
 package com.tux2mc.multiinv.inventory;
 
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
-
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.LinkedList;
+
+import org.spongepowered.api.entity.Player;
 
 /**
  * Created by IntelliJ IDEA. User: Pluckerpluck Date: 17/12/11 Time: 12:32 To change this template use File | Settings | File Templates.

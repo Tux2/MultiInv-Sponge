@@ -2,10 +2,7 @@ package com.tux2mc.multiinv;
 
 import java.util.HashMap;
 
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
+import org.spongepowered.api.entity.Player;
 
 import com.tux2mc.multiinv.api.MIAPIPlayer;
 import com.tux2mc.multiinv.inventory.MIInventory;

@@ -1,17 +1,15 @@
 package com.tux2mc.multiinv.logger;
 
-import org.bukkit.Bukkit;
+import org.apache.logging.log4j.Logger;
 
-import com.tux2mc.multiinv.DefaultVals;
-
-import java.util.logging.Logger;
+import com.tux2mc.multiinv.MultiInv;
 
 /**
  * Created with IntelliJ IDEA. User: Pluckerpluck Date: 29/04/12
  */
 public class ConsoleHandler implements Handler {
     
-    private Logger log = Bukkit.getServer().getPluginManager().getPlugin(DefaultVals.pluginName).getLogger();
+    private Logger log = MultiInv.getCurrentGame().getLogger();
     
     @Override
     public void info(String message) {
@@ -20,12 +18,12 @@ public class ConsoleHandler implements Handler {
     
     @Override
     public void warning(String message) {
-        log.warning(message);
+        log.warn(message);
     }
     
     @Override
     public void severe(String message) {
-        log.severe(message);
+        log.error(message);
     }
     
     @Override

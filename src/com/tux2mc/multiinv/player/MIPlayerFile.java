@@ -1,17 +1,13 @@
 package com.tux2mc.multiinv.player;
 
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.OfflinePlayer;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
-
 import com.tux2mc.multiinv.MultiInv;
 import com.tux2mc.multiinv.inventory.MIEnderchestInventory;
 import com.tux2mc.multiinv.inventory.MIInventory;
 import com.tux2mc.multiinv.inventory.MIInventoryOld;
 
 import java.io.File;
+
+import org.spongepowered.api.entity.Player;
 
 /**
  * Class that contains all the configuration file methods

@@ -8,9 +8,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.YamlConfiguration;
-
 import com.tux2mc.multiinv.MIYamlFiles;
 import com.tux2mc.multiinv.MultiInv;
 

@@ -1,9 +1,5 @@
 package com.tux2mc.multiinv.inventory;
 
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-
 import java.io.Serializable;
 
 public class MIEnderchestInventory implements Serializable {

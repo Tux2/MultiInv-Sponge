@@ -1,9 +1,5 @@
 package com.tux2mc.multiinv;
 
-import org.bukkit.Bukkit;
-import org.bukkit.configuration.Configuration;
-import org.bukkit.configuration.file.YamlConfiguration;
-
 import com.tux2mc.multiinv.mysql.SqlConnector;
 
 import java.io.File;

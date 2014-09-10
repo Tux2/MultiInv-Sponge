@@ -3,9 +3,6 @@ package com.tux2mc.multiinv.player;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.bukkit.GameMode;
-import org.bukkit.OfflinePlayer;
-
 import com.tux2mc.multiinv.inventory.MIEnderchestInventory;
 import com.tux2mc.multiinv.inventory.MIInventory;
 

@@ -13,10 +13,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-import org.bukkit.Bukkit;
-import org.bukkit.GameMode;
-import org.bukkit.OfflinePlayer;
-
 import com.tux2mc.multiinv.MIYamlFiles;
 import com.tux2mc.multiinv.MultiInv;
 import com.tux2mc.multiinv.books.MIBook;

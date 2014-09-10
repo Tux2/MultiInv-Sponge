@@ -3,11 +3,8 @@ package com.tux2mc.multiinv.inventory;
 import java.io.File;
 import java.io.IOException;
 
-import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.HumanEntity;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
+import org.spongepowered.api.entity.HumanEntity;
+import org.spongepowered.api.entity.Player;
 
 import com.tux2mc.multiinv.MIYamlFiles;
 import com.tux2mc.multiinv.MultiInv;
