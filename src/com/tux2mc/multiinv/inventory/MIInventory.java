@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.spongepowered.api.entity.Player;
+import org.spongepowered.api.inventory.ItemStack;
 
 /**
  * Created by IntelliJ IDEA. User: Pluckerpluck Date: 17/12/11 Time: 12:32 To change this template use File | Settings | File Templates.

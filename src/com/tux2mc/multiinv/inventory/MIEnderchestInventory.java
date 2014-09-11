@@ -2,6 +2,9 @@ package com.tux2mc.multiinv.inventory;
 
 import java.io.Serializable;
 
+import org.spongepowered.api.entity.Player;
+import org.spongepowered.api.inventory.ItemStack;
+
 public class MIEnderchestInventory implements Serializable {
     
     /**

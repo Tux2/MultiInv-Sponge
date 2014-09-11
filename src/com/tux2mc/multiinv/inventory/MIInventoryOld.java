@@ -1,6 +1,7 @@
 package com.tux2mc.multiinv.inventory;
 
 import org.spongepowered.api.entity.Player;
+import org.spongepowered.api.inventory.ItemStack;
 
 /**
  * User: Pluckerpluck Date: 23/12/11

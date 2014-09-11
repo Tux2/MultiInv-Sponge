@@ -12,13 +12,16 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.spongepowered.api.inventory.ItemStack;
+import org.spongepowered.api.item.Item;
+
 /**
  * Created by IntelliJ IDEA.
  */
 public class MIItemStack {
     
     //private int itemID = 0;
-    private Material item = Material.AIR;
+    private Item item = null;
     private int quantity = 0;
     private short durability = 0;
     private Map<Enchantment,Integer> enchantments = new HashMap<Enchantment,Integer>();
@@ -28,9 +31,9 @@ public class MIItemStack {
     
     public MIItemStack(ItemStack itemStack) {
         if(itemStack != null) {
-            item = itemStack.getType();
-            quantity = itemStack.getAmount();
-            durability = itemStack.getDurability();
+            item = itemStack.getItem();
+            quantity = itemStack.getQuantity();
+            durability = itemStack.getDamage();
             enchantments = itemStack.getEnchantments();
             if(itemStack.getItemMeta() instanceof BookMeta) {
                 BookMeta meta = (BookMeta) itemStack.getItemMeta();
@@ -77,7 +80,7 @@ public class MIItemStack {
     		return is.clone();
     	}
         ItemStack itemStack = null;
-        if(item != Material.AIR && quantity != 0) {
+        if(item != null && item.getID().equalsIgnoreCase("minecraft:air") && quantity != 0) {
             itemStack = new ItemStack(item, quantity, durability);
             itemStack.addUnsafeEnchantments(enchantments);
             if((item == Material.BOOK_AND_QUILL || item == Material.WRITTEN_BOOK) && book != null) {
@@ -96,9 +99,9 @@ public class MIItemStack {
     
     public String toString() {
         if(nbttags != null) {
-            return item.name() + "," + quantity + "," + durability + "," + getEnchantmentString() + "," + "#" + nbttags;
+            return item.getID() + "," + quantity + "," + durability + "," + getEnchantmentString() + "," + "#" + nbttags;
         } else {
-            return item.name() + "," + quantity + "," + durability + "," + getEnchantmentString();
+            return item.getID() + "," + quantity + "," + durability + "," + getEnchantmentString();
         }
     }
     
